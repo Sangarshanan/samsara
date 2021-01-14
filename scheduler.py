@@ -4,6 +4,8 @@ import heapq
 
 
 class Task:
+    """Task to schedule."""
+
     def __init__(self, function, delay):
         self.function = function
         self.delay = delay
@@ -11,6 +13,8 @@ class Task:
 
 
 class Scheduler:
+    """Schedules things async'ly'."""
+
     def __init__(self):
         self.ready = deque()     # Functions ready to execute
         self.sleeping = []       # Sleeping functions in a priority queue
@@ -52,20 +56,20 @@ def tired():
 
 sched = Scheduler()
 
-# Schedul Wakeup every 10 secs
+# Schedule Wakeup every 10 secs
 wakeup_task = Task(wakeup, 2)
 sched.schedule(wakeup_task)
 
-# Schedul Coffee every 5 secs
+# Schedule Coffee every 5 secs
 coffee_task = Task(coffee, 5)
 sched.schedule(coffee_task)
 
 
-# Schedul savetheword every 1 secs
+# Schedule savetheword every 1 secs
 savetheword_task = Task(savetheword, 1)
 sched.schedule(savetheword_task)
 
-# Schedul savetheword every 9 secs
+# Schedule savetheword every 9 secs
 tired_task = Task(tired, 9)
 sched.schedule(tired_task)
 

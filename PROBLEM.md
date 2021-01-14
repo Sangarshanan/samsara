@@ -1,4 +1,8 @@
-### Async Scheduler.
+### Scheduler
+
+Stupid scheduler with queues
+
+----
 
 It has gotten to a point where I am writing problems for myself
 
@@ -33,6 +37,12 @@ And so on ....
 
 we push the task that need to run to the ready queue, and tasks that need to sleep is inside a priority waiting queue when the elements at the top of the priority queue is ready or its time_to_run = current_time we pop it into the ready queue. Ready queue is just a list of functions running one by one
 
-Issues ....
+**Footnotes eh**
 
 Tasks pending in the ready queue migth not be tended to immediately so we might be lagging in executing tasks
+
+Persist the queues with redis !?
+
+And maybe instead of running the tasks I can just act as a message bus !?
+
+Based on black magic as seen on https://www.youtube.com/watch?v=Y4Gt3Xjd7G8
